@@ -6,8 +6,22 @@ package com.zombiewar;
 
 /**
  *
- * @author rachel
+ * @author titi
  */
-public class Tank {
-    
+public class Tank extends Zombie {
+
+    public Tank(String name) {
+        super(name);
+        this.health = 150;
+        this.attackPower = 20;
+        this.maxHealth = 150;
+        this.isAlive = true;
+    }
+
+    @Override
+    public void attack(Character target) {
+        if (this.isAlive()) {
+            target.takeDamage(attackPower);
+        }
+    }
 }
