@@ -1,13 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.zombiewar;
 
-/**
- *
- * @author rachel
- */
-public class Soldier {
-    
+public class Soldier extends Character {
+    public Soldier(String name) {
+        super(name, 150, 20);
+    }
+
+    @Override
+    public void specialAttack(Character target) {
+        target.takeDamage(this.attack);
+        System.out.println(this.name + " shot " + target.getName() + " for " + this.attack + " damage.");
+    }
 }
