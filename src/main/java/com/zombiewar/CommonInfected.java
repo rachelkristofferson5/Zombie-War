@@ -6,8 +6,22 @@ package com.zombiewar;
 
 /**
  *
- * @author rachel
+ * @author titi
  */
-public class CommonInfected {
-    
+public class CommonInfected extends Zombie {
+
+    public CommonInfected(String name) {
+        super(name);
+        this.health = 30;
+        this.attackPower = 5;
+        this.maxHealth = 30;
+        this.isAlive = true;
+    }
+
+    @Override
+    public void attack(Character target) {
+        if (this.isAlive()) {
+            target.takeDamage(attackPower);
+        }
+    }
 }
