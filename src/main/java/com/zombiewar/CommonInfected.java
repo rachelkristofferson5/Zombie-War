@@ -11,17 +11,11 @@ package com.zombiewar;
 public class CommonInfected extends Zombie {
 
     public CommonInfected(String name) {
-        super(name);
-        this.health = 30;
-        this.attackPower = 5;
-        this.maxHealth = 30;
-        this.isAlive = true;
+    	super(name, 30, 5);
     }
 
     @Override
     public void attack(Character target) {
-        if (this.isAlive()) {
-            target.takeDamage(attackPower);
-        }
+        super.attack(target);
     }
-}
+    }

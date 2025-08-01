@@ -10,15 +10,19 @@ package com.zombiewar;
  */
 public abstract class Zombie extends Character {
 
-    public Zombie(String name) {
-        super(name, 0, 0); // health and attack will be set in subclasses
+    public Zombie(String name, int health, int attackPower) {
+    	super(name, health, attackPower);
     }
 
     @Override
-    public abstract void attack(Character target); // Abstract method to override
+    public void attack(Character target) {
+        if (this.isAlive() && target.isAlive()) {
+            target.takeDamage(this.attackPower);
+        }
+    }
 
     @Override
     public String toString() {
-        return getName() + " [Zombie]";
+        return "Zombie " + getName() + " [Health: " + getHealth() + ", Attack Power: " + this.getAttackPower() + "]";
     }
 }

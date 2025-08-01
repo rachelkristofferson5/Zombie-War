@@ -11,17 +11,11 @@ package com.zombiewar;
 public class Tank extends Zombie {
 
     public Tank(String name) {
-        super(name);
-        this.health = 150;
-        this.attackPower = 20;
-        this.maxHealth = 150;
-        this.isAlive = true;
+    	super(name, 150, 20);
     }
 
     @Override
     public void attack(Character target) {
-        if (this.isAlive()) {
-            target.takeDamage(attackPower);
-        }
+        super.attack(target);
     }
-}
+    }
