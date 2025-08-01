@@ -41,20 +41,19 @@ public class ZombieWar {
        int numSurvivors = random.nextInt(16) + 5;
        
        for(int i = 0; i < numSurvivors; i++) {
-           String name = "Survivor" + i + 1;
            int survivorType = random.nextInt(3);
            
            // Using the random number to choose which survivor type to create 
            // and add to array.
            switch (survivorType) {
                case 0:
-                   survivors.add(new Scientist(name));
+                   survivors.add(new Scientist("Scientist" + i));
                    break;
                case 1:
-                   survivors.add(new Soldier(name));
+                   survivors.add(new Soldier("Soldier" + i));
                    break;
                case 2:
-                   survivors.add(new Civilian(name));
+                   survivors.add(new Civilian("Civilian" + i));
                    break;
            }
        }
@@ -69,10 +68,10 @@ public class ZombieWar {
            // to array.
            switch(zombieType) {
                case 0:
-                    zombies.add(new CommonInfected(name));
+                    zombies.add(new CommonInfected("CommonInfected" + i));
                     break;
                case 1:
-                   zombies.add(new Tank(name));
+                   zombies.add(new Tank("Tank" + i));
                    break;
            }
        }
@@ -154,7 +153,7 @@ public class ZombieWar {
         // Zombies attack survivors
         for(Zombie zombie : copyZombies) {
             if(!copySurvivors.isEmpty()) {
-                Survivor target = copySurvivors.get(random.nextInt(aliveZombies.size()));
+                Survivor target = copySurvivors.get(random.nextInt(copySurvivors.size()));
                 zombie.attack(target);
                 if(target.isAlive() == false) {
                     copySurvivors.remove(target);
