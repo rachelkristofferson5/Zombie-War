@@ -154,7 +154,7 @@ public class ZombieWar {
         // Zombies attack survivors
         for(Zombie zombie : copyZombies) {
             if(!copySurvivors.isEmpty()) {
-                Survivor target = copySurvivors.get(random.nextInt(aliveZombies.size()));
+                Survivor target = copySurvivors.get(random.nextInt(copyZombies.size()));
                 zombie.attack(target);
                 if(target.isAlive() == false) {
                     copySurvivors.remove(target);
