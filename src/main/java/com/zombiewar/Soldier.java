@@ -6,8 +6,13 @@ public class Soldier extends Survivor {
     }
 
     @Override
-    public void specialAttack(Character target) {
-        target.takeDamage(this.getAttack());
+    public void attack(Character target) {
+        target.takeDamage(this.getAttackPower());
+    }
+
+    @Override
+    public String toString() {
+        return "Soldier (" + this.getHealth() + "/" + this.getMaxHealth() + " HP, " + this.getAttackPower() + " ATK)";
     }
 }
 
