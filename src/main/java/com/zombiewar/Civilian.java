@@ -6,7 +6,12 @@ public class Civilian extends Survivor {
     }
 
     @Override
-    public void specialAttack(Character target) {
-        target.takeDamage(this.getAttack());
+    public void attack(Character target) {
+        target.takeDamage(this.getAttackPower());
+    }
+
+    @Override
+    public String toString() {
+        return "Civilian (" + this.getHealth() + "/" + this.getMaxHealth() + " HP, " + this.getAttackPower() + " ATK)";
     }
 }
