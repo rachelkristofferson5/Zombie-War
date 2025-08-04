@@ -8,6 +8,9 @@ public class Scientist extends Survivor {
     @Override
     public void attack(Character target) {
         target.takeDamage(this.getAttackPower());
+        if (!target.isAlive()) {
+            System.out.println("   " + this.getClass().getSimpleName() + " killed " + target.getClass().getSimpleName());
+        }
     }
 
     @Override
