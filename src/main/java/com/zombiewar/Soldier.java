@@ -7,6 +7,6 @@ public class Soldier extends Survivor {
     
     @Override
     public void attack(Character target) {
-        target.takeDamage(this.getAttackPower());
+        target.takeDamage(10);
     }
 }
