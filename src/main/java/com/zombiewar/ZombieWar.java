@@ -37,6 +37,13 @@ public class ZombieWar {
         statement at the end will inform user of numbers of each type when ran.
     */
     public void generateCharacters() {
+        // Counters for output
+        int civilianCount = 0;
+        int soldierCount = 0;
+        int scientistCount = 0;
+        int tankCount = 0;
+        int commonInfectedCount = 0;
+        
        // Generating random number (5-20) of survivors and type.
        int numSurvivors = random.nextInt(16) + 5;
        
@@ -48,12 +55,15 @@ public class ZombieWar {
            switch (survivorType) {
                case 0:
                    survivors.add(new Scientist("Scientist" + i));
+                   scientistCount++;
                    break;
                case 1:
                    survivors.add(new Soldier("Soldier" + i));
+                   soldierCount++;
                    break;
                case 2:
                    survivors.add(new Civilian("Civilian" + i));
+                   civilianCount++;
                    break;
            }
        }
@@ -69,15 +79,20 @@ public class ZombieWar {
            switch(zombieType) {
                case 0:
                     zombies.add(new CommonInfected("CommonInfected" + i));
+                    commonInfectedCount++;
                     break;
                case 1:
                    zombies.add(new Tank("Tank" + i));
+                   tankCount++;
                    break;
            }
        }
        
-       System.out.println("We have " + survivors.size() + " trying to make it to safety.");
-       System.out.println("But there are " + zombies.size() + " zombies waiting for them.");
+       System.out.println("We have " + survivors.size() + " survivors trying to "
+               + "make it to safety (" + scientistCount + " scientist, " + 
+               civilianCount + " civilian, " + soldierCount + " soldiers)");
+       System.out.println("But there are " + zombies.size() + " zombies waiting for them (" + 
+                         commonInfectedCount + " common infected, " + tankCount + " tanks)");
     }
     
     /*
