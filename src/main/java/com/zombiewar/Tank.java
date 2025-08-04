@@ -16,6 +16,11 @@ public class Tank extends Zombie {
 
     @Override
     public void attack(Character target) {
-        super.attack(target);
+        if (this.isAlive()) {
+            target.takeDamage(20);
+            if (!target.isAlive()) {
+                System.out.println("   " + this.name + " killed " + target.getName());
+            }
+        }
     }
-    }
+}
