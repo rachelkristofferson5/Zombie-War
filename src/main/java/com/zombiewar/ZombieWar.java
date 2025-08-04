@@ -54,15 +54,15 @@ public class ZombieWar {
            // and add to array.
            switch (survivorType) {
                case 0:
-                   survivors.add(new Scientist("Scientist" + i));
+                   survivors.add(new Scientist("Scientist " + i));
                    scientistCount++;
                    break;
                case 1:
-                   survivors.add(new Soldier("Soldier" + i));
+                   survivors.add(new Soldier("Soldier " + i));
                    soldierCount++;
                    break;
                case 2:
-                   survivors.add(new Civilian("Civilian" + i));
+                   survivors.add(new Civilian("Civilian " + i));
                    civilianCount++;
                    break;
            }
@@ -78,11 +78,11 @@ public class ZombieWar {
            // to array.
            switch(zombieType) {
                case 0:
-                    zombies.add(new CommonInfected("CommonInfected" + i));
+                    zombies.add(new CommonInfected("CommonInfected " + i));
                     commonInfectedCount++;
                     break;
                case 1:
-                   zombies.add(new Tank("Tank" + i));
+                   zombies.add(new Tank("Tank " + i));
                    tankCount++;
                    break;
            }
