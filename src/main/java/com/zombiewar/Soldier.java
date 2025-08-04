@@ -1,13 +1,12 @@
 package com.zombiewar;
 
-public class Soldier extends Character {
+public class Soldier extends Survivor {
     public Soldier(String name) {
-        super(name, 150, 20);
+        super(name, 100, 10);
     }
-
+    
     @Override
-    public void specialAttack(Character target) {
-        target.takeDamage(this.attack);
-        System.out.println(this.name + " shot " + target.getName() + " for " + this.attack + " damage.");
+    public void attack(Character target) {
+        target.takeDamage(this.getAttackPower());
     }
 }
