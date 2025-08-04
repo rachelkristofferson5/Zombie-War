@@ -23,6 +23,6 @@ public abstract class Zombie extends Character {
 
     @Override
     public String toString() {
-        return "Zombie " + getName() + " [Health: " + getHealth() + ", Attack Power: " + this.getAttackPower() + "]";
+        return getName() + " [Zombie]";
     }
 }
