@@ -1,13 +1,12 @@
 package com.zombiewar;
 
-public class Scientist extends Character {
+public class Scientist extends Survivor {
     public Scientist(String name) {
-        super(name, 50, 5);
+        super(name, 20, 2);
     }
-
+    
     @Override
-    public void specialAttack(Character target) {
-        target.takeDamage(this.attack);
-        System.out.println(this.name + " zapped " + target.getName() + " for " + this.attack + " damage.");
+    public void attack(Character target) {
+        target.takeDamage(2);
     }
 }
