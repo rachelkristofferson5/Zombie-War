@@ -15,10 +15,12 @@ public class CommonInfected extends Zombie {
     }
 
     @Override
-    if (this.isAlive()) {
+    public void attack(Character target) {
+        if (this.isAlive()) {
             target.takeDamage(5);
             if (!target.isAlive()) {
                 System.out.println("   " + this.name + " killed " + target.getName());
             }
         }
     }
+}
