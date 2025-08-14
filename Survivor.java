@@ -32,19 +32,22 @@ public abstract class Survivor extends Character {
         if (!this.isAlive() || !target.isAlive()) return;
 
         int dealt;
+        boolean weaponHit = false;
 
         if (weaponName != null) {
             // Roll for hit chance
             if (rand.nextDouble() <= weaponAccuracy) {
-                dealt = weaponDamage;
+                dealt = this.attackPower() + weaponDamage;
+                weaponHit = true;
             } else {
                 // Miss with weapon - fallback to base attack
                 System.out.println("   " + getName() + " missed with " + weaponName);
-                dealt = attackPower;
+                dealt = this.getAttackPower();
+                weaponHit = false;
             }
         } else {
             // No weapon equipped - use base attack
-            dealt = attackPower;
+            dealt = this.getAttackPower();
         }
 
         // Apply damage if greater than zero
@@ -54,7 +57,7 @@ public abstract class Survivor extends Character {
 
         // If the target died from this attack
         if (!target.isAlive()) {
-            if (weaponName != null) {
+            if (weaponName != null && weaponHit) {
                 System.out.println("   " + getName() + " killed " + target.getName() + " using " + weaponName);
             } else {
                 System.out.println("   " + getName() + " killed " + target.getName());
