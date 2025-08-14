@@ -46,6 +46,10 @@ public abstract class Character {
         return health;
     }
 
+    public int getAttackPower() {
+        return attackPower;
+    }
+
     // Returns true if the character is still alive
     public boolean isAlive() {
         return isAlive;
