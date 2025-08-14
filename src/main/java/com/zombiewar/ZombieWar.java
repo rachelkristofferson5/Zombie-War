@@ -248,41 +248,40 @@ public class ZombieWar {
      * found in the Survivor class.
      */
     public void giveWeapons() {
-        System.out.println("Surviors found weapon cache...");
-        
-        for(Survivor survivor : survivors) {
-            int randomWeapon = random.nextInt(7);
-            
-            switch(randomWeapon) {
-                case 0:
-                    survivor.setWeapon("Shotgun", 0, 0); // item, damage, accuracy
-                    System.out.println("\t" + survivor.getName() + " picked up a shotgun.");
-                    break;
-                case 1:
-                    survivor.setWeapon("Submachine Gun", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up a submachine gun.");
-                    break;
-                case 2:
-                    survivor.setWeapon("Assault Rifle", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up an assault rifle.");
-                    break;
-                case 3:
-                    survivor.setWeapon("Pistol", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up a pistol.");
-                    break;
-                case 4:
-                    survivor.setWeapon("Axe", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up an axe.");
-                    break;
-                case 5:
-                    survivor.setWeapon("Crowbar", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up a crowbar.");
-                    break;
-                case 6: 
-                    survivor.setWeapon("Frying Pan", 0, 0);
-                    System.out.println("\t" + survivor.getName() + " picked up a frying pan.");
-                    break;
-                    
+    System.out.println("Survivors found weapon cache...");
+
+    for (Survivor survivor : survivors) {
+        int randomWeapon = random.nextInt(7);
+
+        switch (randomWeapon) {
+            case 0:
+                survivor.setWeapon("Shotgun", 25, 0.6);
+                System.out.println("   " + survivor.getName() + " picked up a shotgun.");
+                break;
+            case 1:
+                survivor.setWeapon("Submachine Gun", 15, 0.75);
+                System.out.println("   " + survivor.getName() + " picked up a submachine gun.");
+                break;
+            case 2:
+                survivor.setWeapon("Assault Rifle", 20, 0.7);
+                System.out.println("   " + survivor.getName() + " picked up an assault rifle.");
+                break;
+            case 3:
+                survivor.setWeapon("Pistol", 10, 0.85);
+                System.out.println("   " + survivor.getName() + " picked up a pistol.");
+                break;
+            case 4:
+                survivor.setWeapon("Axe", 15, 0.9);
+                System.out.println("   " + survivor.getName() + " picked up an axe.");
+                break;
+            case 5:
+                survivor.setWeapon("Crowbar", 12, 0.85);
+                System.out.println("   " + survivor.getName() + " picked up a crowbar.");
+                break;
+            case 6:
+                survivor.setWeapon("Frying Pan", 8, 0.95);
+                System.out.println("   " + survivor.getName() + " picked up a frying pan.");
+                break;
             }
         }
     }
