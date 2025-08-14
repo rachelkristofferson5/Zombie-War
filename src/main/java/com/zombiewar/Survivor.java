@@ -37,7 +37,7 @@ public abstract class Survivor extends Character {
         if (weaponName != null) {
             // Roll for hit chance
             if (rand.nextDouble() <= weaponAccuracy) {
-                dealt = this.attackPower() + weaponDamage;
+                dealt = this.getAttackPower() + weaponDamage;
                 weaponHit = true;
             } else {
                 // Miss with weapon - fallback to base attack
